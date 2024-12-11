@@ -1,0 +1,29 @@
+<section class="container mt-5">
+    <h2 class="text-center mb-4"><%= header %></h2>
+
+    <% if (dogs.length > 0) { %>
+        <div class="row">
+            <% dogs.forEach(dog => { %>
+                <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title"><%= dog.name %></h5>
+                            <p class="card-text">
+                                <strong>Breed:</strong> <%= dog.breed %><br>
+                                <strong>Age:</strong> <%= dog.age %> years<br>
+                                <strong>Description:</strong> <%= dog.description || "No description provided." %>
+                            </p>
+                            <% if (dog.adopted) { %>
+                                <span class="badge bg-success">Adopted</span>
+                            <% } else { %>
+                                <span class="badge bg-warning text-dark">Available</span>
+                            <% } %>
+                        </div>
+                    </div>
+                </div>
+            <% }); %>
+        </div>
+    <% } else { %>
+        <p class="text-center text-muted">No results found for "<%= keyword %>".</p>
+    <% } %>
+</section>

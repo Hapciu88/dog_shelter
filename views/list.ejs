@@ -1,0 +1,54 @@
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+    }
+    header {
+        background-color: #f8f9fa;
+        padding: 20px;
+        text-align: center;
+        border-bottom: 1px solid #ccc;
+    }
+    .container {
+        padding: 20px;
+    }
+    .dog-card {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 15px;
+        margin-bottom: 20px;
+        background-color: #f9f9f9;
+    }
+    .dog-card h3 {
+        margin-top: 0;
+    }
+    .adopted {
+        color: green;
+        font-weight: bold;
+    }
+    .not-adopted {
+        color: red;
+        font-weight: bold;
+    }
+</style>
+
+<div class="container">
+    <% if (dogs && dogs.length > 0) { %>
+        <% dogs.forEach(dog => { %>
+            <div class="dog-card">
+                <h3><%= dog.name %></h3>
+                <p><strong>Breed:</strong> <%= dog.breed %></p>
+                <p><strong>Age:</strong> <%= dog.age %> years</p>
+                <p><strong>Description:</strong> <%= dog.description || 'No description available.' %></p>
+                <p class="<%= dog.adopted ? 'adopted' : 'not-adopted' %>">
+                    <%= dog.adopted ? 'Adopted' : 'Available for adoption' %>
+                </p>
+            </div>
+        <% }); %>
+    <% } else { %>
+        <p>No dogs found.</p>
+    <% } %>
+</div>
