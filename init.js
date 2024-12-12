@@ -1,5 +1,5 @@
 const sequelize = require('./config/database'); // Import the Sequelize instance
-const Dog = require('./models/Dog'); // if init.js is in dog_shelter/
+const Dog = require('./models/dog');
 // Function to sync database and seed data
 async function initializeDatabase() {
     try {
