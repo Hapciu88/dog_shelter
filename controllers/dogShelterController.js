@@ -1,5 +1,5 @@
 const sequelize = require('../config/database'); // Import Sequelize instance
-const Dog = require('../models/Dog'); // Import the Dog model
+const Dog = require('./models/dog');
 
 module.exports = {
 
