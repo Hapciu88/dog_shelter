@@ -1,6 +1,5 @@
 const sequelize = require('../config/database'); // Import Sequelize instance
-const Dog = require('./models/dog');
-
+const Dog = require('../models/dog');
 module.exports = {
 
     // Render the search page
